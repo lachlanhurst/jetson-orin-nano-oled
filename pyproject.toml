@@ -13,7 +13,8 @@ dependencies = [
 ]
 
 [project.scripts]
-jetson-orin-nano-oled = "jetson_orin_nano_oled:main"
+oled-i2c = "jetson_orin_nano_oled.oled_i2c:main"
+oled-spi = "jetson_orin_nano_oled.oled_spi:main"
 
 [build-system]
 requires = ["hatchling"]
