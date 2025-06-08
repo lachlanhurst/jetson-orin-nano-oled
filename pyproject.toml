@@ -1,5 +1,5 @@
 [project]
-name = "Jetson Orin Nano OLED"
+name = "jetson-orin-nano-oled"
 version = "0.1.0"
 description = "Test SPI and I2C connections to OLED displays from NVIDIA Jetson Orin Nano"
 readme = "README.md"
