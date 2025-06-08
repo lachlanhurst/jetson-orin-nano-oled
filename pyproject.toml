@@ -1,0 +1,20 @@
+[project]
+name = "Jetson Orin Nano OLED"
+version = "0.1.0"
+description = "Test SPI and I2C connections to OLED displays from NVIDIA Jetson Orin Nano"
+readme = "README.md"
+authors = [
+    { name = "Lachlan Hurst", email = "lachlan.hurst@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "jetson-gpio>=2.1.9",
+    "luma-oled>=3.14.0",
+]
+
+[project.scripts]
+jetson-orin-nano-oled = "jetson_orin_nano_oled:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
