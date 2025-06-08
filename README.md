@@ -98,3 +98,23 @@ To run the I2C test
     uv run oled-i2c
 
 If all goes to plan you should see the above on your OLED displays
+
+
+# Running the display code with Docker
+
+The Dockerfile in this repo uses on of the [Jetson Containers](https://github.com/dusty-nv/jetson-containers) ROS images. It does so only because I plan in using ROS in a future project, there are absolutely better base images to start with. Unfortunately as a result of this uv doesn't play along particularly well, so some hacks are used below. It assumes Jetson Containers has been installed.
+
+Build the docker image
+
+    sudo docker build -t ros-oled-test .
+
+Run the image. Note we run ths container as "privileged" without this flag access to GPIO wont work. This command will open a bash shell within the container.
+
+    sudo jetson-containers run -v .:/app --privileged  ros-oled-test
+
+To run the OLED tests within the container
+
+    cd /app/src
+    python -m jetson_orin_nano_oled.oled_spi
+    python -m jetson_orin_nano_oled.oled_i2c
+
